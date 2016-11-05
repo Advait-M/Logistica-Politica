@@ -1,2 +1,2 @@
-# Logistica-Politica
-ECHacks
+# echacks
+Project for Electric City Hacks
