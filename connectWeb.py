@@ -2,6 +2,12 @@ from flask import Flask, render_template, request
 import pyredb as pydb
 import Backend as twitData
 import userDataClass as udc
+import config
+config = {}
+with open("config.py") as f:
+    code = compile(f.read(), "config.py", 'exec')
+    exec(code, config)
+f.close() 
 
 app = Flask(__name__)
 @app.route("/")
