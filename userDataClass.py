@@ -2,6 +2,7 @@ import indicoio
 import warnings
 import pyredb as pydb
 import Backend as twitData
+import config
 import math
 
 class UserData:
