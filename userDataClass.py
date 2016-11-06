@@ -128,7 +128,7 @@ class UserData:
                 partyCount += 1
 
         if partyCount == 0:
-            return 0
+            return [0, []]
         for i in range(0, len(emotionsOfUserParty)):
             emotionsOfUserParty[i] = emotionsOfUserParty[i]/partyCount
 
@@ -139,7 +139,7 @@ class UserData:
             tempError = math.sqrt(math.pow(userMood[i]-emotionsOfUserParty[i], 2))
             error += tempError
 
-        return error
+        return [error, emotionsOfUserParty]
 
     # interpretError takes a float point value and returns a string telling the user about their level of difference in
     #   emotion between them and their party in aggregate.
