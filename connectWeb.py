@@ -32,6 +32,9 @@ def index():
 @app.route("/howitworks.html")
 def showPage():
 	return render_template("howitworks.html")
+@app.route("/index.html")
+def showHome():
+    return(render_template("index.html"))
 if __name__ == "__main__":
 	pydb.LogiticaPolitica().start()
 	app.run()
