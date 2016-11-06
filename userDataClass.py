@@ -170,7 +170,7 @@ class UserData:
         for e in range(0, len(percentList)):
             randomName = round(percentList[e]*100, 2)
             percentList[e] = randomName
-        probablyParty = percentList.index(max(percentList))
+        probablyParty = max(percentList)
         return probablyParty
 
 

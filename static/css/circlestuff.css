@@ -4,8 +4,14 @@
 	height: 300px;
 	/* width and height can be anything, as long as they're equal */
 }
-.circle h1{
-    font-size: 58px;
+.title{
+    color: #7c795d;
+    font-family: 'Trocchi', serif;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0;
+    text-align:center;
 }
 /* Create the animation blocks */
 @keyframes spin {
