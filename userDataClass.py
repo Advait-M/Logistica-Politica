@@ -161,6 +161,19 @@ class UserData:
             else:
                 pass
 
+    # percentParty takes a userData and returns the percentage that a user is of their suspected party as a float point
+    # percentParty: UserData -> Float
+    def percentParty(self):
+        partyDict = self.askInfo("party", "dictionary")
+        partiesList = ["Green", "Liberal", "Conservative", "Libertarian"]
+        percentList = [partyDict["Green"], partyDict["Liberal"], partyDict["Conservative"], partyDict["Libertarian"]]
+        for e in range(0, len(percentList)):
+            randomName = round(percentList[e]*100, 2)
+            percentList[e] = randomName
+        probablyParty = percentList.index(max(percentList))
+        return probablyParty
+
+
     # ------------------------------------------------------------------------------------------------------------------
     # End of Database Operations
 
