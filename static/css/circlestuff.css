@@ -22,7 +22,7 @@
 }
 .wrapper2 {
     position:absolute;
-    top:75px;
+    top:350px;
     left:300px;
     width: 300px;
     height: 300px;
@@ -32,6 +32,22 @@
     position:absolute;
     top:75px;
     left:50px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.wrapper4 {
+    position:absolute;
+    top:350px;
+    left:800px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.wrapper5 {
+    position:absolute;
+    top:75px;
+    left:950px;
     width: 300px;
     height: 300px;
     margin: 0 auto;
@@ -91,6 +107,33 @@
 	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #fff000 0%, #d2ff1f 100%, #0fff00 95%);
 	background-image: -webkit-radial-gradient(45px 45px, circle cover, #fff000, #d2ff1f);
 	background-image: radial-gradient(45px 45px 45deg, circle cover, #fff000 0%, #d2ff1f 100%, #0fff00 95%);
+
+	animation-name: spin;
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+#advanced4 {
+	width: 200px;
+	height: 200px;
+
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #98e3ff 0%, #809aff 100%, #5959ff 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, #98e3ff, #809aff);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, #98e3ff 0%, #809aff 100%, #5959ff 95%);
+
+	animation-name: spin;
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+#advanced5 {
+	width: 200px;
+	height: 200px;
+
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #ff7dfa 0%, #ff49e9 100%, #ff1fc0 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, #ff7dfa, #ff49e9);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, #ff7dfa 0%, #ff49e9 100%, #ff1fc0 95%);
 
 	animation-name: spin;
 	animation-duration: 3s; /* 3 seconds */
