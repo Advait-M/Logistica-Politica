@@ -1,7 +1,67 @@
-<p>{{ handle }}</p>
-<p>{{ name }}</p>
-<p>{{ amountError }}</p>
-<p>{{ emotionsParty }}</p>
-<p>{{ mood }}</p>
-<p>{{ party }}</p>
-<p>{{ interpretError }}</p>
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="../static/css/pricetable.css" rel="stylesheet">
+
+<body>
+  <h1 class="title"> <strong> Results </strong></h1>
+  <div id="container">
+    <div class="pricetab">
+      <h1> {{ interpretError }} </h1>
+      <div class="price">
+         <h2 style="font-size:20px">Deviation from party</h2>
+      </div>
+      <div class="infos">
+        <h2 style="font-size:25px"> What does the percentage mood deviation mean? </h2>
+      </div>
+      <div class="pricefooter">
+      </div>
+    </div>
+    <div class="pricetab">
+      <h1>{{ party }}</h1>
+      <div class="price">
+          <h2 style="font-size:22px"> Political  </h2>
+          <h2 style="font-size:22px"> Affiliation </h2>
+      </div>
+      <div class="infos">
+        <h2 style="font-size:25px"> Out of: Liberal, Conservative, Libertarian, Green </h2>
+      </div>
+      <div class="pricefooter">
+      </div>
+    </div>
+    <div class="pricetabmid">
+      <h1> {{ name }} </h1>
+      <div class="pricemid">
+          <h2 style="font-size:25px"> Name  </h2>
+          <h2 style="font-size:25px"> Handle </h2>
+      </div>
+      <div class="infos">
+
+          <h2 style="font-size:30px"> {{ handle }}</h2>
+      </div>
+      <div class="pricefootermid">
+      </div>
+    </div>
+    <div class="pricetab">
+      <h1> {{ mood }}</h1>
+      <div class="price">
+        <h2 style="font-size:30px"> Mood  </h2>
+      </div>
+      <div class="infos">
+        <h2 style="font-size:25px">Mood dictates the personality of a person.</h2>
+      </div>
+      <div class="pricefooter">
+      </div>
+    </div>
+    <div class="pricetab">
+      <h1> {{ amountError }}</h1>
+      <div class="price">
+          <h2 style="font-size:25px"> Mood  </h2>
+          <h2 style="font-size:22px"> Deviation  </h2>
+      </div>
+      <div class="infos">
+        <h2 style="font-size:25px"> How different is your mood from your party's mood?  </h2>
+      </div>
+      <div class="pricefooter">
+      </div>
+    </div>
+  </div>
+</body>
