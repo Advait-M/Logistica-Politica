@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Envision City - Your Vision of Toronto</title>
+	<title>Logitica Political - How The People Feel</title>
 
 	<meta charset="utf-8">
 	<meta name="description" content="Envision City is a platform for Toronto youth to engage in urban design in their communities.">
 	<meta name="keywords" content="envision,city">
-	<meta name="author" content="Harry Dong">
+	<meta name="author" content="William W, Advait M, Misha K">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="icon" type="image/png" href="css/img/envision-icon.png">
@@ -18,10 +18,18 @@
 	<!-- Custom Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 	<script src="../static/js/jquery.js"></script>
 	<script src="../static/js/bootstrap.min.js"></script>
 	<script src="../static/js/jquery.easing.min.js"></script>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 	<script src="../static/js/envision-js.js"></script>
 	<script src="../static/js/wow.min.js"></script>
@@ -64,9 +72,11 @@
 					<li class="hidden"><a href="#page-top"></a></li>
 					<li><a class="page-scroll" href="#home-page">Home</a></li>
 					<li><a class="page-scroll" href="#about">About</a></li>
+					<li><a class="page-scroll" href="howitworks.html">How It Works</a></li>
 					<li><a class="page-scroll" href="challenges.html">Design Projects</a></li>
 					<!--<li><a class="page-scroll" href="#criteria">What to Submit</a></li>-->
 					<li><a class="page-scroll" href="challenges.html#contact">Join</a></li>
+				
 				</ul>
 			</div>
 
@@ -76,9 +86,20 @@
 	<!-- Intro Header -->
 	<header class="intro" id="home-page">
 		<div class="diamond">
-			<h1>{{data}}</h1>
+			<h1>Logitica Politica</h1>
 		</div>
 	</header>
+
+	<form class="search-form" action="search-redirect.php" method="get">
+            <div class="input-group">
+                <label class="sr-only" for="search">Enter a Valid Twitter Account Username...</label>
+                <input id="search-input-1" type="search" class="form-control" name="search_keyword" autofocus="autofocus" maxlength="60" placeholder="Enter a Valid Twitter Account Username..." aria-describedby="basic-addon2">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+
 
 	<section id="what-is" class="container content-section text-center" >
 		<table style="width:100%; background-image: url('../static/css/img/what4.jpg');height: 600px; backgroundnd-size:cover;" id="about">
@@ -99,7 +120,7 @@
 						<h2> What is Logistica Politica? </h2>
 					</div>
 					<div >
-						<h3 style="color:black; font-weight:bold;">
+						<h3 style="color:black; font-weight:bold;"> Politics often becomes an emotionally charged topic. When people gather into groups, certain emotions tend to spread easily within the group, like anger towards another group or fear about the future. But are certain groups more likely to share certain emotions over others? That's what Logistica Politica wants to answer. By analyzing tweets from a user, we can find their political leaning, what emotion they convey in their tweets, and how that compares to other people within their political group.
 						</h3>
 					</div>
 					
