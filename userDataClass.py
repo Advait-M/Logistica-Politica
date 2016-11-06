@@ -6,6 +6,8 @@ import math
 
 class UserData:
     """
+    UserData is a class that contains details of a twitter user that would be relevant to performing a correlation
+        of their political leanings (based on tweets) and their conveyed emotion (also based on tweets).
     Fields:
         (can be added with parameter updaters)
         realName: String
@@ -142,6 +144,21 @@ class UserData:
     # interpretError: Float -> Str
     """
     def interpretError(floatIn):
+        borders = [10, 30, 50, 70, 90, 1000000]
+        textAssociation = [
+            "Your tweeted emotion matches highly with your tweeted political party: ",
+            "Your tweeted emotion is fairly matched up with your tweeted political party: ",
+            "Your tweeted emotion is moderately matched with your tweeted political party: ",
+            "Your tweeted emotion is less than moderately well associated with your tweeted political party",
+            "Your tweeted emotion poorly matches with your tweeted political party: ",
+            "It is highly unlikely that your tweeted emotion matches that of the others in your political party given the data."
+        ]
+        for i in range(0, len(borders)):
+            if floatIn < borders[i]:
+                return textAssociation[i]
+            else:
+                pass
+
 
     """
     # ------------------------------------------------------------------------------------------------------------------
@@ -158,6 +175,8 @@ if __name__ == "__main__":
         exec(code, config)
     f.close()
     firedb = pydb.LogiticaPolitica()
+
+    # Test each individual operation.
     """
     basicTest1 = UserData()
     # print(basicTest1)
@@ -182,9 +201,9 @@ if __name__ == "__main__":
     print(basicTest1.compareWithParty())
     """
 
-    #Populate the database
-    # CHANGE THIS TO ONE WHEN THE DB IS POPULATED
-    on = 0
+    #Populate the database and test serial tweets
+    # CHANGE THIS TO 1 WHEN THE DB IS POPULATED
+    on = 1
     politicallyActiveHandles = [
         "RepublicanStudy",
         "benpolitico",
@@ -238,9 +257,12 @@ if __name__ == "__main__":
         for i in politicallyActiveHandles:
             newUser = UserData()
             tweets = twitData.getTweets(i)
-            newUser.updateHandle(i)
-            newUser.updateRealName(tweets[0])
-            newUser.updateOpinion(twitData.getTweets(i)[1])
-            newUser.updateMood(newUser.askInfo("mood", "string"))
-            newUser.updateParty(newUser.askInfo("party", "string"))
-            newUser.addToDB()
+            if tweets == []:
+                pass
+            else:
+                newUser.updateHandle(i)
+                newUser.updateRealName(tweets[0])
+                newUser.updateOpinion(twitData.getTweets(i)[1])
+                newUser.updateMood(newUser.askInfo("mood", "string"))
+                newUser.updateParty(newUser.askInfo("party", "string"))
+                newUser.addToDB()
