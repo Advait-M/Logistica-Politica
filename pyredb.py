@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from pyrebase import *
-import config as cf
+import config
 
 class LogiticaPolitica:
     """
@@ -9,7 +9,7 @@ class LogiticaPolitica:
     leanings.
     """
     def __init__(self):
-        self.config = cf.firebaseStuff
+        self.config = config.firebaseStuff
         self.firebase = initialize_app(self.config)
         self.db = self.firebase.database()
 
