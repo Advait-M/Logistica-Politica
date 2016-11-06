@@ -144,8 +144,8 @@ class UserData:
     # interpretError takes a float point value and returns a string telling the user about their level of difference in
     #   emotion between them and their party in aggregate.
     # interpretError: Float -> Str
-    """
-    def interpretError(floatIn):
+    
+    def interpretError(self, floatIn):
         borders = [10, 30, 50, 70, 90, 1000000]
         textAssociation = [
             "Your tweeted emotion matches highly with your tweeted political party: ",
@@ -161,8 +161,6 @@ class UserData:
             else:
                 pass
 
-
-    """
     # ------------------------------------------------------------------------------------------------------------------
     # End of Database Operations
 
