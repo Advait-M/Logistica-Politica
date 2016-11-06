@@ -1,16 +1,10 @@
 from twitter import *
 import time
-
-# Use API keys securely
-config = {}
-with open("config.py") as f:
-    code = compile(f.read(), "config.py", 'exec')
-    exec(code, config)
-f.close()
+import config
 
 #Instance Twitter
 twitter = Twitter(
-auth=OAuth(config["access_key"], config["access_secret"], config["consumer_key"], config["consumer_secret"]))
+auth=OAuth(config.access_key, config.access_secret, config.consumer_key, config.consumer_secret))
 
 # getTweets takes a string called handle and produces a list of strings corresponding to the user's name and a long
 #   string of all their tweets concatinated.

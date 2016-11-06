@@ -77,7 +77,7 @@ class UserData:
     #           dictOrString is anyof(dictionary string)
     def askInfo(self, request, dictOrString):
         if request == "mood":
-            tempDict = indicoio.emotion(self.opinionString, api_key=config["indico_key"])
+            tempDict = indicoio.emotion(self.opinionString, api_key=config.indico_key)
             if dictOrString == "dictionary":
                 return tempDict
             else:
@@ -86,7 +86,7 @@ class UserData:
                     if tempDict[i] == maxVal:
                         return i
         elif request == "party":
-            tempDict = indicoio.political(self.opinionString, api_key=config["indico_key"])
+            tempDict = indicoio.political(self.opinionString, api_key=config.indico_key)
             if dictOrString == "dictionary":
                 return tempDict
             else:
