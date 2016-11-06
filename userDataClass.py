@@ -110,7 +110,7 @@ class UserData:
 
     # compareWithParty takes a UserData and returns a number that discusses how that user's emotions
     #   correspond with the average emotion of their political party in the form of error from these emotions.
-    # compareWithParty: UserData Pyrebase -> Str
+    # compareWithParty: UserData Pyrebase -> listOf(float, listof(float))
     def compareWithParty(self):
         usersList = firedb.getAll()
         emotionsList = ["anger", "joy", "sadness", "surprise", "fear"]
@@ -132,11 +132,11 @@ class UserData:
         for i in range(0, len(emotionsOfUserParty)):
             emotionsOfUserParty[i] = emotionsOfUserParty[i]/partyCount
 
-        error = 0
+        error = 0.0
         userD = self.askInfo("mood", "dictionary")
         userMood = [userD["anger"], userD["joy"], userD["sadness"], userD["surprise"], userD["fear"]]
         for i in range(0,len(emotionsOfUserParty)):
-            tempError = math.sqrt(math.pow(userMood[i]-emotionsOfUserParty[i], 2))
+            tempError = ((userMood[i] - emotionsOfUserParty[i]) ** 2)**(1/2)
             error += tempError
 
         return [error, emotionsOfUserParty]

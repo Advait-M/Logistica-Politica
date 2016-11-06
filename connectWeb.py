@@ -29,7 +29,9 @@ def index():
 		# return str((newUser.twitterHandle, newUser.realName, newUser.opinionString, newUser.mood, newUser.politicalParty))
 		# listOf(dictOf(Dict) Float listOf(float) Str  Str Str Str
 		return render_template("results.html", data = data, amountError = amountError, emotionsParty = emotionsParty, interpretError = interpretError, handle = newUser.twitterHandle, name = newUser.realName, tweet = newUser.opinionString, mood = newUser.mood, party = newUser.politicalParty)
-
+@app.route("/howitworks.html")
+def showPage():
+	return render_template("howitworks.html")
 if __name__ == "__main__":
 	pydb.LogiticaPolitica().start()
 	app.run()
