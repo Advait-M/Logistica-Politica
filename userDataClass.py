@@ -5,6 +5,7 @@ import Backend as twitData
 import config
 import math
 
+firedb = pydb.LogiticaPolitica()
 class UserData:
     """
     UserData is a class that contains details of a twitter user that would be relevant to performing a correlation
@@ -175,7 +176,6 @@ if __name__ == "__main__":
         code = compile(f.read(), "config.py", 'exec')
         exec(code, config)
     f.close()
-    firedb = pydb.LogiticaPolitica()
 
     # Test each individual operation.
     """
