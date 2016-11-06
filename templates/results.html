@@ -1,67 +1,23 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link href="../static/css/pricetable.css" rel="stylesheet">
+<link href="../static/css/circlestuff.css" rel="stylesheet">
 
 <body>
-  <h1 class="title"> <strong> Results </strong></h1>
-  <div id="container">
-    <div class="pricetab">
-      <h1> {{ interpretError }} </h1>
-      <div class="price">
-         <h2 style="font-size:20px">Deviation from party</h2>
-      </div>
-      <div class="infos">
-        <h2 style="font-size:25px"> What does the percentage mood deviation mean? </h2>
-      </div>
-      <div class="pricefooter">
-      </div>
+    <h1 class="title"> <strong> Results </strong></h1>
+    <div class="wrapper">
+        <div id="advanced" class="circle"></div>
+        <div class="text">Handle: {{ handle }}</div>
+        <div class="text2">Name: {{ name }}</div>
     </div>
-    <div class="pricetab">
-      <h1>{{ party }}</h1>
-      <div class="price">
-          <h2 style="font-size:22px"> Political  </h2>
-          <h2 style="font-size:22px"> Affiliation </h2>
-      </div>
-      <div class="infos">
-        <h2 style="font-size:25px"> Out of: Liberal, Conservative, Libertarian, Green </h2>
-      </div>
-      <div class="pricefooter">
-      </div>
+    <div class = "wrapper2">
+        <div id="advanced2" class="circle"></div>
+        <div class="text">Political Party: {{ party }}</div>
+        <div class="text2">(Predicted via tweets)</div>
     </div>
-    <div class="pricetabmid">
-      <h1> {{ name }} </h1>
-      <div class="pricemid">
-          <h2 style="font-size:25px"> Name  </h2>
-          <h2 style="font-size:25px"> Handle </h2>
-      </div>
-      <div class="infos">
+    <div class = "wrapper3">
+        <div id="advanced3" class="circle"></div>
+        <div class="text">Mood Deviation: {{ amountError }}</div>
+        <div class="text2">(Predicted via tweets)</div>
+    </div>
 
-          <h2 style="font-size:30px"> {{ handle }}</h2>
-      </div>
-      <div class="pricefootermid">
-      </div>
-    </div>
-    <div class="pricetab">
-      <h1> {{ mood }}</h1>
-      <div class="price">
-        <h2 style="font-size:30px"> Mood  </h2>
-      </div>
-      <div class="infos">
-        <h2 style="font-size:25px">Mood dictates the personality of a person.</h2>
-      </div>
-      <div class="pricefooter">
-      </div>
-    </div>
-    <div class="pricetab">
-      <h1> {{ amountError }}</h1>
-      <div class="price">
-          <h2 style="font-size:25px"> Mood  </h2>
-          <h2 style="font-size:22px"> Deviation  </h2>
-      </div>
-      <div class="infos">
-        <h2 style="font-size:25px"> How different is your mood from your party's mood?  </h2>
-      </div>
-      <div class="pricefooter">
-      </div>
-    </div>
-  </div>
+
 </body>

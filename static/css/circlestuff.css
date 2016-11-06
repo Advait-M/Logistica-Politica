@@ -1,0 +1,99 @@
+.circle {
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	/* width and height can be anything, as long as they're equal */
+}
+.circle h1{
+    font-size: 58px;
+}
+/* Create the animation blocks */
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+.wrapper {
+    position: absolute;
+    top:75px;
+    left:550px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.wrapper2 {
+    position:absolute;
+    top:75px;
+    left:300px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.wrapper3 {
+    position:absolute;
+    top:75px;
+    left:50px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.text {
+  position: absolute;
+  top:0px;
+  width: 200px;
+  height: 0px;
+  margin: 0 auto;
+  z-index:10;
+  text-align:center;
+  line-height:175px;
+}
+.text2 {
+  position: absolute;
+  top:25px;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  z-index:10;
+  text-align:center;
+  line-height:190px;
+}
+
+/* Spinning, gradient circle; CSS only! */
+#advanced {
+	width: 200px;
+	height: 200px;
+
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+
+	animation-name: spin;
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+#advanced2 {
+	width: 200px;
+	height: 200px;
+
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #14ff08 0%, #1cf6ff 100%, #1c52ff 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, #14ff08, #1cf6ff);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, #14ff08 0%, #1cf6ff 100%, #1c52ff 95%);
+
+	animation-name: spin;
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+#advanced3 {
+	width: 200px;
+	height: 200px;
+
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #fff000 0%, #d2ff1f 100%, #0fff00 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, #fff000, #d2ff1f);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, #fff000 0%, #d2ff1f 100%, #0fff00 95%);
+
+	animation-name: spin;
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
