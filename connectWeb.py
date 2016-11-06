@@ -20,9 +20,9 @@ def index():
 		newUser.updateOpinion(tweets[1])
 		newUser.updateMood(newUser.askInfo("mood", "string"))
 		newUser.updateParty(newUser.askInfo("party", "string"))
-		return str((newUser.handle, newUser.name, newUser.opinion, newUser.mood, newUser.party))
 		newUser.addToDB()
-		return render_template("results.html", handle = newUser.handle, name = newUser.name, tweet = newUser.opinion, mood = newUser.mood, party = newUser.party)
+		return str((newUser.twitterHandle, newUser.name, newUser.opinion, newUser.mood, newUser.party))
+		# return render_template("results.html", handle = newUser.twitterHandle, name = newUser.name, tweet = newUser.opinion, mood = newUser.mood, party = newUser.party)
 
 if __name__ == "__main__":
 	pydb.LogiticaPolitica().start()
