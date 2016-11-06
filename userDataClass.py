@@ -136,7 +136,7 @@ class UserData:
         userD = self.askInfo("mood", "dictionary")
         userMood = [userD["anger"], userD["joy"], userD["sadness"], userD["surprise"], userD["fear"]]
         for i in range(0,len(emotionsOfUserParty)):
-            tempError = math.sqrt(math.pow(userMood[i]-emotionsOfUserParty[i], 2))
+            tempError = ((userMood[i]-emotionsOfUserParty[i]) ** 2)**(1/2)
             error += tempError
 
         return [error, emotionsOfUserParty]
