@@ -26,11 +26,12 @@ def index():
 		amountError = round(amountError*100,2)
 		emotionsParty = eStuff[1]
 		interpretError = newUser.interpretError(amountError)
+        partyConfidence = newUser.percentParty()
 
 		#Important interface
 		# return str((newUser.twitterHandle, newUser.realName, newUser.opinionString, newUser.mood, newUser.politicalParty))
 		# listOf(dictOf(Dict) Float listOf(float) Str  Str Str Str
-		return render_template("results.html", data = data, amountError = amountError, emotionsParty = emotionsParty, interpretError = interpretError, handle = newUser.twitterHandle, name = newUser.realName, tweet = newUser.opinionString, mood = newUser.mood, party = newUser.politicalParty)
+		return render_template("results.html", data = data, amountError = amountError, emotionsParty = emotionsParty, interpretError = interpretError, handle = newUser.twitterHandle, name = newUser.realName, tweet = newUser.opinionString, mood = newUser.mood, party = newUser.politicalParty, partyConfidence = partyConfidence)
 @app.route("/howitworks.html")
 def showPage():
 	return render_template("howitworks.html")
