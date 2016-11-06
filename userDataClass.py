@@ -120,7 +120,7 @@ class UserData:
 
         for i in usersList:
             tempParty = [i["Green"],i["Liberal"],i["Conservative"],i["Libertarian"]]
-            probableParty = tempParty.index(max(tempParty))
+            probableParty = partiesList[tempParty.index(max(tempParty))]
             if probableParty == self.politicalParty:
                 tempEmotion = [i["anger"], i["joy"], i["sadness"], i["surprise"], i["fear"]]
                 for i in range(0,len(tempEmotion)):
