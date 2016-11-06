@@ -8,4 +8,4 @@ firebaseStuff = {
   "authDomain": "https://logistica-politica.firebaseapp.com/",
   "databaseURL": "https://logistica-politica.firebaseio.com/",
   "storageBucket": "http://logistica-politica.appspot.com/"
-}
+}  
