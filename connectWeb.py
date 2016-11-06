@@ -21,7 +21,7 @@ def index():
 		newUser.updateMood(newUser.askInfo("mood", "string"))
 		newUser.updateParty(newUser.askInfo("party", "string"))
 		newUser.addToDB()
-		return str((newUser.twitterHandle, newUser.name, newUser.opinion, newUser.mood, newUser.party))
+		return str((newUser.twitterHandle, newUser.realName, newUser.opinionString, newUser.mood, newUser.politicalParty))
 		# return render_template("results.html", handle = newUser.twitterHandle, name = newUser.name, tweet = newUser.opinion, mood = newUser.mood, party = newUser.party)
 
 if __name__ == "__main__":
