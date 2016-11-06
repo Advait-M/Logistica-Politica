@@ -27,6 +27,7 @@ def index():
 		interpretError = newUser.interpretError(amountError)
 
 		# return str((newUser.twitterHandle, newUser.realName, newUser.opinionString, newUser.mood, newUser.politicalParty))
+		# listOf(dictOf(Dict) Float listOf(float) Str  Str Str Str
 		return render_template("results.html", data = data, amountError = amountError, emotionsParty = emotionsParty, interpretError = interpretError, handle = newUser.twitterHandle, name = newUser.realName, tweet = newUser.opinionString, mood = newUser.mood, party = newUser.politicalParty)
 
 if __name__ == "__main__":
