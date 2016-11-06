@@ -146,7 +146,7 @@ class UserData:
     # interpretError: Float -> Str
     
     def interpretError(self, floatIn):
-        borders = [10, 30, 50, 70, 90, 1000000]
+        borders = [.10, .30, .50, .70, .90, 1000000]
         textAssociation = [
             "Your tweeted emotion matches highly with your tweeted political party: ",
             "Your tweeted emotion is fairly matched up with your tweeted political party: ",
