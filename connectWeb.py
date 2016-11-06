@@ -23,6 +23,7 @@ def index():
 		newUser.addToDB()
 		eStuff = newUser.compareWithParty()
 		amountError = eStuff[0]
+		amountError = round(amountError*100,2)
 		emotionsParty = eStuff[1]
 		interpretError = newUser.interpretError(amountError)
 
