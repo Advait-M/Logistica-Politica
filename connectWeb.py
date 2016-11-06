@@ -31,8 +31,8 @@ def index():
         partyConfidence = newUser.percentParty()
         print(partyConfidence)
         #Important interface
-		# return str((newUser.twitterHandle, newUser.realName, newUser.opinionString, newUser.mood, newUser.politicalParty))
-		# listOf(dictOf(Dict) Float listOf(float) Str  Str Str Str
+        # return str((newUser.twitterHandle, newUser.realName, newUser.opinionString, newUser.mood, newUser.politicalParty))
+        # listOf(dictOf(Dict) Float listOf(float) Str  Str Str Str
         return render_template("results.html", data = data, amountError = amountError, emotionsParty = emotionsParty, interpretError = interpretError, handle = newUser.twitterHandle, name = newUser.realName, tweet = newUser.opinionString, mood = curMood, party = newUser.politicalParty, partyConfidence = partyConfidence)
 @app.route("/howitworks.html")
 def showPage():
