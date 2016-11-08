@@ -17,8 +17,6 @@ class UserData:
         opinionString: String
         politicalParty: String
         Mood: String
-
-
     """
     def __init__(self):
         self.realName = ""
@@ -113,7 +111,6 @@ class UserData:
     # compareWithParty: UserData Pyrebase -> listOf(float, listof(float))
     def compareWithParty(self):
         usersList = firedb.getAll()
-        """ Bug possibly in this area, but not entirely sure since tests say otherwise. """
         if usersList == []:
             politicallyActiveHandles = [
                 "RepublicanStudy",
@@ -245,12 +242,6 @@ class UserData:
 if __name__ == "__main__":
     #Tests
     # get api keys securely
-    config = {}
-    with open("config.py") as f:
-        code = compile(f.read(), "config.py", 'exec')
-        exec(code, config)
-    f.close()
-
     # Test each individual operation.
     """
     basicTest1 = UserData()
@@ -272,6 +263,5 @@ if __name__ == "__main__":
     print(basicTest1.askInfo("mood", "dictionary"))
     print(basicTest1.askInfo("party", "dictionary"))
     basicTest1.addToDB()
-
     print(basicTest1.compareWithParty())
     """
