@@ -113,6 +113,69 @@ class UserData:
     # compareWithParty: UserData Pyrebase -> listOf(float, listof(float))
     def compareWithParty(self):
         usersList = firedb.getAll()
+        """ Bug possibly in this area, but not entirely sure since tests say otherwise. """
+        if usersList == []:
+            politicallyActiveHandles = [
+                "RepublicanStudy",
+                "benpolitico",
+                "daveweigel",
+                "fixfelicia",
+                "pwire",
+                "susanpage",
+                "alex_wags",
+                "HotlineReid",
+                "PElliottAP",
+                "bethreinhard",
+                "thegarance",
+                "mikememoli",
+                "ErinMcPike",
+                "markknoller",
+                "SuzyKhimm",
+                "jaketapper",
+                "nprpolitics",
+                "McClatchyDC",
+                "SwingState",
+                "Wonkette",
+                "GOP12",
+                "LizMair",
+                "LarrySabato",
+                "Dave_Wasserman",
+                "anamariecox",
+                "samgf",
+                "donnabrazile",
+                "chucktodd",
+                "cbellantoni",
+                "Atrios",
+                "nicopitney",
+                "ggreenwald",
+                "wonkroom",
+                "stevebenen",
+                "AlanColmes",
+                "ewerickson",
+                "mindyfinn",
+                "dmataconis",
+                "TPCarney",
+                "jbarro",
+                "Heminator",
+                "reihansalam",
+                "nathandaschle",
+                "fivethirtyeight",
+                "ppppolls",
+                "MysteryPollster",
+                "RasmussenPoll"]
+
+            for i in politicallyActiveHandles:
+                newUser = UserData()
+                tweets = twitData.getTweets(i)
+                if tweets == []:
+                    pass
+                else:
+                    newUser.updateHandle(i)
+                    newUser.updateRealName(tweets[0])
+                    newUser.updateOpinion(twitData.getTweets(i)[1])
+                    newUser.updateMood(newUser.askInfo("mood", "string"))
+                    newUser.updateParty(newUser.askInfo("party", "string"))
+                    newUser.addToDB()
         emotionsList = ["anger", "joy", "sadness", "surprise", "fear"]
         partiesList = ["Green", "Liberal", "Conservative", "Libertarian"]
         emotionsOfUserParty = [0, 0, 0, 0, 0]
@@ -182,6 +245,11 @@ class UserData:
 if __name__ == "__main__":
     #Tests
     # get api keys securely
+    config = {}
+    with open("config.py") as f:
+        code = compile(f.read(), "config.py", 'exec')
+        exec(code, config)
+    f.close()
 
     # Test each individual operation.
     """
@@ -207,69 +275,3 @@ if __name__ == "__main__":
 
     print(basicTest1.compareWithParty())
     """
-
-    #Populate the database and test serial tweets
-    # CHANGE THIS TO 1 WHEN THE DB IS POPULATED
-    on = 0
-    politicallyActiveHandles = [
-        "RepublicanStudy",
-        "benpolitico",
-        "daveweigel",
-        "fixfelicia",
-        "pwire",
-        "susanpage",
-        "alex_wags",
-        "HotlineReid",
-        "PElliottAP",
-        "bethreinhard",
-        "thegarance",
-        "mikememoli",
-        "ErinMcPike",
-        "markknoller",
-        "SuzyKhimm",
-        "jaketapper",
-        "nprpolitics",
-        "McClatchyDC",
-        "SwingState",
-        "Wonkette",
-        "GOP12",
-        "LizMair",
-        "LarrySabato",
-        "Dave_Wasserman",
-        "anamariecox",
-        "samgf",
-        "donnabrazile",
-        "chucktodd",
-        "cbellantoni",
-        "Atrios",
-        "nicopitney",
-        "ggreenwald",
-        "wonkroom",
-        "stevebenen",
-        "AlanColmes",
-        "ewerickson",
-        "mindyfinn",
-        "dmataconis",
-        "TPCarney",
-        "jbarro",
-        "Heminator",
-        "reihansalam",
-        "nathandaschle",
-        "fivethirtyeight",
-        "ppppolls",
-        "MysteryPollster",
-        "RasmussenPoll"]
-
-    if on == 0:
-        for i in politicallyActiveHandles:
-            newUser = UserData()
-            tweets = twitData.getTweets(i)
-            if tweets == []:
-                pass
-            else:
-                newUser.updateHandle(i)
-                newUser.updateRealName(tweets[0])
-                newUser.updateOpinion(twitData.getTweets(i)[1])
-                newUser.updateMood(newUser.askInfo("mood", "string"))
-                newUser.updateParty(newUser.askInfo("party", "string"))
-                newUser.addToDB()
