@@ -182,11 +182,6 @@ class UserData:
 if __name__ == "__main__":
     #Tests
     # get api keys securely
-    config = {}
-    with open("config.py") as f:
-        code = compile(f.read(), "config.py", 'exec')
-        exec(code, config)
-    f.close()
 
     # Test each individual operation.
     """
@@ -215,7 +210,7 @@ if __name__ == "__main__":
 
     #Populate the database and test serial tweets
     # CHANGE THIS TO 1 WHEN THE DB IS POPULATED
-    on = 1
+    on = 0
     politicallyActiveHandles = [
         "RepublicanStudy",
         "benpolitico",
