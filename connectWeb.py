@@ -13,6 +13,8 @@ def index():
         return render_template("index.html")
     else:
         data = pydb.LogiticaPolitica().getAll()
+        """ This part looks like it might have something to do with the empty db bug. Maybe an else condition can
+        be used to populate the db, if compareWithParty in userDataClass.py doesn't do it."""
         if data != []:
             newUser = udc.UserData()
             newUser.updateHandle(handle)

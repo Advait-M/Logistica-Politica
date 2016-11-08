@@ -113,6 +113,7 @@ class UserData:
     # compareWithParty: UserData Pyrebase -> listOf(float, listof(float))
     def compareWithParty(self):
         usersList = firedb.getAll()
+        """ Bug possibly in this area, but not entirely sure since tests say otherwise. """
         if usersList == []:
             politicallyActiveHandles = [
                 "RepublicanStudy",
